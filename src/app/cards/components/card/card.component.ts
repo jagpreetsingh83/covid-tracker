@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CardItem } from '../../../models';
 
 @Component({
@@ -6,12 +6,8 @@ import { CardItem } from '../../../models';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input() item: CardItem;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   get cssClass() {
     return this.item.type.toLowerCase();
