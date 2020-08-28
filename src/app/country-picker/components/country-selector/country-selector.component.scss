@@ -7,6 +7,7 @@
 
   select {
     width: 30rem;
+    font-size: 2rem;
   }
 
   @media only screen and (max-width: $sm) {
@@ -14,6 +15,7 @@
 
     select {
       width: 100%;
+      font-size: 1.6rem;
     }
   }
 }
