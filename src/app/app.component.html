@@ -4,7 +4,9 @@
   </header>
   <main>
     <app-cards [cards]="cardsData"></app-cards>
-    <app-country-selector></app-country-selector>
+    <app-country-selector
+      (selectedCountry)="onCountryChange($event)"
+    ></app-country-selector>
     <app-chart></app-chart>
   </main>
 </div>

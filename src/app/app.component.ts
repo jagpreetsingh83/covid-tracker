@@ -46,6 +46,10 @@ export class AppComponent implements OnInit, OnDestroy {
     ];
   }
 
+  onCountryChange(country: string) {
+    console.log('Country changed Yooohoo!');
+  }
+
   ngOnDestroy() {
     this._subs.unsubscribe();
   }
