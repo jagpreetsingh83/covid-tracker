@@ -1,5 +1,9 @@
 <section class="country-selector">
-  <select id="country-selector" [formControl]="countryControl">
+  <select
+    id="country-selector"
+    [formControl]="countryControl"
+    aria-label="Select country to see COVID-19 spread"
+  >
     <option value="">Global</option>
     <option *ngFor="let country of countries | async" [value]="country">{{
       country

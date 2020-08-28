@@ -1,6 +1,6 @@
 <div class="card {{ cssClass }}" role="group">
-  <h2>{{ item.type }}</h2>
-  <h3 [countUp]="item.count">0</h3>
+  <h2 aria-live="polite">{{ item.type }}</h2>
+  <h3 [countUp]="item.count" aria-live="polite">0</h3>
   <h4>{{ item.date | date }}</h4>
   <p>{{ item.message }}</p>
 </div>

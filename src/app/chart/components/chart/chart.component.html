@@ -1,4 +1,9 @@
-<div class="chart" role="group" *ngIf="barChartData">
+<div
+  class="chart"
+  role="group"
+  *ngIf="barChartData"
+  aria-label="Graphical representation of the COVID-19 cases"
+>
   <canvas
     baseChart
     [datasets]="barChartData"
