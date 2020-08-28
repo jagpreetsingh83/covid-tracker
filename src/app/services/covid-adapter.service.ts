@@ -21,7 +21,11 @@ export class CovidRecordAdapter implements Adapter<CovidRecord> {
 export class CovidAdapterService {
   constructor(private recordAdapter: CovidRecordAdapter) {}
 
-  public getCovidRecord(data: any): CovidRecord {
+  getCovidRecord(data: any): CovidRecord {
     return this.recordAdapter.adapt(data);
+  }
+
+  getCountryList(data: any): string[] {
+    return (data.countries as []).map((i: { name: string }) => i.name);
   }
 }

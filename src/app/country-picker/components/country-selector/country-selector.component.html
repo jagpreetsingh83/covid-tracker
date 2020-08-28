@@ -1,5 +1,8 @@
 <section class="country-selector">
   <select name="country" id="country-selector">
     <option>Global</option>
+    <option *ngFor="let country of countries | async" [value]="country">{{
+      country
+    }}</option>
   </select>
 </section>

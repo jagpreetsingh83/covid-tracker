@@ -1,8 +1,10 @@
+const baseUrl = 'https://covid19.mathdro.id/api';
+
 export const endpointUrls = {
-  BASE: () => {
-    return `https://covid19.mathdro.id/api`;
+  META_DATA: () => {
+    return baseUrl;
   },
   COUNTRY_LIST: () => {
-    return `${this.BASE()}/countries`;
+    return `${baseUrl}/countries`;
   }
 };

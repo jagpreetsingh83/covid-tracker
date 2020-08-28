@@ -5,7 +5,15 @@
   padding: 2rem;
   text-align: right;
 
+  select {
+    width: 30rem;
+  }
+
   @media only screen and (max-width: $sm) {
     text-align: center;
+
+    select {
+      width: 100%;
+    }
   }
 }
