@@ -1,0 +1,11 @@
+@import "abstracts/variables";
+
+.country-selector {
+  background-color: white;
+  padding: 2rem;
+  text-align: right;
+
+  @media only screen and (max-width: $sm) {
+    text-align: center;
+  }
+}

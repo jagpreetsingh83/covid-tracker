@@ -1,0 +1,12 @@
+@import "abstracts/variables";
+
+.cards {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: $sm) {
+    grid-gap: 1rem;
+    grid-template-columns: none;
+  }
+}
