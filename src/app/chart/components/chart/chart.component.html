@@ -1,11 +1,12 @@
-<canvas
-  baseChart
-  [datasets]="barChartData"
-  [labels]="barChartLabels"
-  [options]="barChartOptions"
-  [legend]="barChartLegend"
-  [chartType]="barChartType"
-  [colors]="barChartColors"
-  *ngIf="barChartData"
->
-</canvas>
+<div class="chart" role="group" *ngIf="barChartData">
+  <canvas
+    baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [legend]="barChartLegend"
+    [chartType]="barChartType"
+    [colors]="barChartColors"
+  >
+  </canvas>
+</div>

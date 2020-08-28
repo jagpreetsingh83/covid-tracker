@@ -14,7 +14,9 @@ export class ChartComponent implements OnChanges {
   @Input() country: string;
 
   barChartOptions: ChartOptions = {
-    responsive: true
+    responsive: true,
+    maintainAspectRatio: false,
+    responsiveAnimationDuration: 5000
   };
   barChartLabels: Label[] = [''];
   barChartType: ChartType = 'bar';
