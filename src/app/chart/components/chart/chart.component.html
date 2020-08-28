@@ -1,3 +1,11 @@
-<section class="chart">
-  Chart
-</section>
+<canvas
+  baseChart
+  [datasets]="barChartData"
+  [labels]="barChartLabels"
+  [options]="barChartOptions"
+  [plugins]="barChartPlugins"
+  [legend]="barChartLegend"
+  [chartType]="barChartType"
+  *ngIf="barChartData"
+>
+</canvas>

@@ -7,6 +7,6 @@
     <app-country-selector
       (selectedCountry)="onCountryChange($event)"
     ></app-country-selector>
-    <app-chart></app-chart>
+    <app-chart [barChartData]="chartsData" [country]="country"></app-chart>
   </main>
 </div>

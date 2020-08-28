@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartDataSets } from 'chart.js';
 import { CardItem, CovidRecord } from './models';
 import { CovidHttpService } from './services/covid-http.service';
 
@@ -9,6 +10,8 @@ import { CovidHttpService } from './services/covid-http.service';
 })
 export class AppComponent implements OnInit {
   cardsData: CardItem[];
+  chartsData: ChartDataSets[];
+  country: string;
 
   constructor(private covidHttp: CovidHttpService) {}
 
@@ -17,8 +20,10 @@ export class AppComponent implements OnInit {
   }
 
   private loadCountryData(country: string = '') {
+    this.country = country;
     this.covidHttp.countryData(country).subscribe((data: CovidRecord) => {
       this.setupCardsData(data);
+      this.setupChartsData(data);
     });
   }
 
@@ -42,6 +47,14 @@ export class AppComponent implements OnInit {
         date: data.lastUpdate,
         message: 'Number of deaths caused by COVID-19.'
       }
+    ];
+  }
+
+  private setupChartsData(data: CovidRecord) {
+    this.chartsData = [
+      { data: [data.confirmed], label: 'Infected' },
+      { data: [data.recovered], label: 'Recovered' },
+      { data: [data.deaths], label: 'Deaths' }
     ];
   }
 

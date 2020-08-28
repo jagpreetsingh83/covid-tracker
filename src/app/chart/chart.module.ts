@@ -1,14 +1,13 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LineComponent } from './components/line/line.component';
-import { BarComponent } from './components/bar/bar.component';
+import { NgModule } from '@angular/core';
+import { ChartsModule } from 'ng2-charts';
 import { ChartComponent } from './components/chart/chart.component';
 
-const COMPONENTS = [LineComponent, BarComponent, ChartComponent];
+const COMPONENTS = [ChartComponent];
 
 @NgModule({
   declarations: [...COMPONENTS],
-  imports: [CommonModule],
+  imports: [CommonModule, ChartsModule],
   exports: [...COMPONENTS]
 })
 export class ChartModule {}
