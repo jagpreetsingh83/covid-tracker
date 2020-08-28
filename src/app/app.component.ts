@@ -1,5 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { CardItem, CovidRecord } from './models';
 import { CovidHttpService } from './services/covid-http.service';
 
@@ -8,19 +7,19 @@ import { CovidHttpService } from './services/covid-http.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
   cardsData: CardItem[];
-
-  private _subs: Subscription = new Subscription();
 
   constructor(private covidHttp: CovidHttpService) {}
 
   ngOnInit() {
-    this._subs.add(
-      this.covidHttp.metaData().subscribe((data: CovidRecord) => {
-        this.setupCardsData(data);
-      })
-    );
+    this.loadCountryData();
+  }
+
+  private loadCountryData(country: string = '') {
+    this.covidHttp.countryData(country).subscribe((data: CovidRecord) => {
+      this.setupCardsData(data);
+    });
   }
 
   private setupCardsData(data: CovidRecord) {
@@ -47,10 +46,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   onCountryChange(country: string) {
-    console.log('Country changed Yooohoo!');
-  }
-
-  ngOnDestroy() {
-    this._subs.unsubscribe();
+    this.loadCountryData(country);
   }
 }

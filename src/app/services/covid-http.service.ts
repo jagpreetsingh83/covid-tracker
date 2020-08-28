@@ -15,12 +15,14 @@ export class CovidHttpService {
     private adapter: CovidAdapterService
   ) {}
 
-  metaData(): Observable<CovidRecord> {
+  countryData(country: string): Observable<CovidRecord> {
     console.debug('Fetching data from the server');
-    return this.httpClient.get<CovidRecord>(endpointUrls.META_DATA()).pipe(
-      tap(response => console.debug('Received from server', response)),
-      map(response => this.adapter.getCovidRecord(response))
-    );
+    return this.httpClient
+      .get<CovidRecord>(endpointUrls.COUNTRY_DATA(country))
+      .pipe(
+        tap(response => console.debug('Received from server', response)),
+        map(response => this.adapter.getCovidRecord(response))
+      );
   }
 
   countries(): Observable<string[]> {

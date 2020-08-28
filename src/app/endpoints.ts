@@ -1,8 +1,8 @@
 const baseUrl = 'https://covid19.mathdro.id/api';
 
 export const endpointUrls = {
-  META_DATA: () => {
-    return baseUrl;
+  COUNTRY_DATA: (country: string) => {
+    return country ? `${baseUrl}/countries/${country}` : baseUrl;
   },
   COUNTRY_LIST: () => {
     return `${baseUrl}/countries`;
