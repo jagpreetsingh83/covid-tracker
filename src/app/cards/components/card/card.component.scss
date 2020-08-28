@@ -2,12 +2,24 @@
 
 .infected {
   border-bottom: 1rem solid $color-blue;
+  transition: all 0.5s;
+  &:hover {
+    background: rgba($color: $color-blue, $alpha: 0.1);
+  }
 }
 
 .recovered {
   border-bottom: 1rem solid $color-green;
+  transition: all 0.5s;
+  &:hover {
+    background: rgba($color: $color-green, $alpha: 0.1);
+  }
 }
 
 .deaths {
   border-bottom: 1rem solid $color-red;
+  transition: all 0.5s;
+  &:hover {
+    background: rgba($color: $color-red, $alpha: 0.1);
+  }
 }
