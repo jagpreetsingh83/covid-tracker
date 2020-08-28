@@ -1,6 +1,6 @@
-<div class="card infected" role="group">
-  <h2>Infected</h2>
-  <h3>24,284,974</h3>
-  <h4>Thu Aug 27 2020</h4>
-  <p>Number of active cases from COVID-19.</p>
+<div class="card {{ cssClass }}" role="group">
+  <h2>{{ item.type }}</h2>
+  <h3>{{ item.count }}</h3>
+  <h4>{{ item.date | date }}</h4>
+  <p>{{ item.message }}</p>
 </div>

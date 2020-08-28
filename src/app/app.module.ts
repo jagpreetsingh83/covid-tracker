@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -7,7 +8,13 @@ import { CountrySelectorModule } from './country-picker/country-selector.module'
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, CardsModule, CountrySelectorModule, ChartModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    CardsModule,
+    CountrySelectorModule,
+    ChartModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

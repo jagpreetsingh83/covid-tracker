@@ -1,5 +1,7 @@
 <section class="cards">
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
+  <ul>
+    <li *ngFor="let item of cards">
+      <app-card [item]="item"></app-card>
+    </li>
+  </ul>
 </section>

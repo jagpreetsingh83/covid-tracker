@@ -1,9 +1,20 @@
-// h1 {
-//   font-size: 5rem;
-// }
+h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: $color-dim;
+}
 
-// @media only screen and (max-width: $md) {
-//   h1 {
-//     font-size: 3rem;
-//   }
-// }
+h3 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: 200;
+  color: $color-dim;
+}
+
+p {
+  font-size: 1.6rem;
+}
